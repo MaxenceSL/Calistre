@@ -1,0 +1,341 @@
+header {
+    background-color: #7F8263;
+    display: flex;
+    justify-content: center;
+}
+
+/**************MENU*************/
+nav {
+    position: fixed;
+    left: 0px;
+    z-index: 1000;
+}
+
+#menu-toggle {
+    background: none;
+    border: none;
+    margin: 2rem;
+    color: #ED8762;
+    font-family: "Play", sans-serif;
+    font-size: 1.25rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#menu {
+    position: absolute;
+    top: 0;
+    width: 30vw;
+    height: 100vh;
+    background: #EEE4DB;
+    font-family: "Play", sans-serif;
+    text-align: left;
+    text-transform: uppercase;
+    /* font-weight: bold; */
+    padding: 1rem;
+    display: none;
+    flex-direction: column;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+#menu-close {
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    font-size: 1.15rem;
+    color: #7F8263;
+    font-family: "Play", sans-serif;
+    text-transform: uppercase;
+    margin: 0 0 2rem;
+}
+
+a {
+    text-decoration: none;
+    color: #7F8263;
+    font-size: 2.5rem;
+    margin-top: 1.5rem;
+}
+
+#menu.show {
+    display: flex;
+    animation: slide 0.3s ease-out;
+}
+
+@keyframes slide {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/*LOGO*/
+.logoTitle {
+    text-align: center;
+    margin-top: 1rem;
+    /* margin-bottom: 5rem; */
+}
+
+.titleH1 {
+    font-family: "Playfair Display", serif;
+    font-size: 3rem;
+    color: #EEE4DB;
+}
+
+/******MAIN*****/
+/*Titre ACcueil*/
+.titlesAccueil {
+    background-color: #7F8263;
+    /* width: 100vw; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1.25rem;
+    padding-top: 3rem;
+}
+
+.accueilH2,
+.titlesAccueil {
+    color: #EEE4DB;
+    font-family: "Play", sans-serif;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+
+.titlesAccueilH3 {
+    width: 15rem;
+    margin: 0 3rem;
+    font-size: 1.25rem;
+}
+
+.sketchAccueil {
+    text-align: center;
+    background-image: url(../ressources/Rectangle\ 4.png);
+    background-size: cover;
+    background-position: center;
+    height: 29rem;
+    width: 100%;
+    max-width: 35rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.titleH3Right {
+    text-align: right;
+}
+
+/*****Décro Bulle marron*****/
+.atelierBackground {
+    position: absolute;
+    top: -6rem;
+    right: 0;
+    z-index: -1;
+}
+
+.atelierBackground_decoration {
+    position: absolute;
+    top: -1rem;
+    left: 0;
+    z-index: -1;
+}
+
+/*Atelier A PROPOS*/
+
+.atelierSection {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    padding: 10rem;
+    padding-top: 5rem;
+    background-color: #EEE4DB;
+    z-index: 100;
+}
+
+/*Carousel*/
+.atelierPictures {
+    padding-top: 7rem;
+}
+
+.cadre-atelier-img-container,
+.cadre-knowledge-img-container {
+    position: absolute;
+    overflow: hidden;
+    border-radius: 0.5rem;
+    width: 30rem;
+    height: 36rem;
+    border: 3px solid #7F8263;
+    margin-right: 0.5rem;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.cadre-atelier-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.atelierPictures .cadre-atelier-img-container:nth-child(1) {
+    transform: translateX(0) scale(1);
+    z-index: 3;
+}
+
+/* Position des cartes empilées */
+.atelierPictures .cadre-atelier-img-container:nth-child(2) {
+    transform: translateX(40px) scale(0.95) rotate(3deg);
+    z-index: 2;
+}
+
+.atelierPictures .cadre-atelier-img-container:nth-child(3) {
+    transform: translateX(70px) scale(0.9) rotate(5deg);
+    z-index: 1;
+}
+
+.atelierPictures .cadre-atelier-img-container:nth-child(4) {
+    /* opacity: 1; */
+    transform: translateX(100px) scale(0.85) rotate(6deg);
+    z-index: 0;
+}
+
+/* Boutons */
+.navig,
+.navigKnowledge {
+    /* transform: translateY(-50%); */
+    background: #EEE4DB;
+    box-shadow: 3px 1.8px 0px #7F8263;
+    border: 3px solid #7F8263;
+    width: 3rem;
+    height: 3rem;
+    font-size: 1.25rem;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: background 0.3s;
+    margin-left: 0.5rem;
+}
+
+.carrouselButtonAtelier,
+.carrouselButtonKnowledge{
+    margin: 37rem 0 0 12rem;
+}
+
+.navig:hover,
+.navigKnowledge:hover {
+    position: relative;
+    /* background: white; */
+    left: 1.8px;
+    top: 3px;
+    box-shadow: none;
+}
+
+.navigSVG_prev {
+    transform: rotate(180deg);
+}
+
+/*Article à propos & atelier*/
+/*ARTICLE*/
+.articleAbout {
+    font-family: "Play", sans-serif;
+    width: 40%;
+    color: #EEE4DB;
+    /* color: #323232; */
+    /* margin-right: 5rem; */
+}
+
+.articleAboutH2 {
+    font-size: 6rem;
+    font-weight: bold;
+    font-family: "Kufam", sans-serif;
+}
+
+.articleAboutH3 {
+    font-size: 1.25rem;
+    font-family: "Kufam", sans-serif;
+    margin-bottom: 3rem;
+}
+
+.articleAbout_myself {
+    display: flex;
+    margin-bottom: 2rem;
+}
+
+.articleAbout_myself h4 {
+    color: #323232;
+}
+
+.articleAbout_imgAtelier {
+    width: 8rem;
+}
+
+.articleAbout p {
+    padding: 0.5rem;
+}
+
+/***** KNOWLEDGE *****/
+.atelierKnowledge {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.knowledgeSection{
+    position: relative;
+    z-index: 10;
+    background-color: #EEE4DB;
+    padding-top: 15rem;
+    display: flex;
+    /* justify-content: center; */
+    padding: 10rem;
+}
+/*illu knowledge*/
+.gridKnowledge {
+    display: grid;
+    grid-template-columns: 15rem 15rem;
+    grid-template-rows: 15rem 15rem;
+    justify-items: center;
+    align-items: center;
+}
+
+.gridKnowledge_fig{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.gridKnowledge_fig figcaption{
+    text-transform:uppercase;
+    font-family: "Kufam", sans-serif;
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding-top: 1rem;
+}
+
+.knowledgePictures .cadre-knowledge-img-container:nth-child(1) {
+    transform: translateX(0) scale(1);
+    z-index: 3;
+}
+
+/* Position des cartes empilées */
+.knowledgePictures .cadre-knowledge-img-container:nth-child(2) {
+    transform: translateX(40px) scale(0.95) rotate(3deg);
+    z-index: 2;
+}
+
+.knowledgePictures .cadre-knowledge-img-container:nth-child(3) {
+    transform: translateX(70px) scale(0.9) rotate(5deg);
+    z-index: 1;
+}
+
+.knowledgePictures .cadre-knowledge-img-container:nth-child(4) {
+    /* opacity: 1; */
+    transform: translateX(100px) scale(0.85) rotate(6deg);
+    z-index: 0;
+}
