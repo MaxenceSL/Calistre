@@ -222,7 +222,7 @@ a {
 }
 
 .carrouselButtonAtelier,
-.carrouselButtonKnowledge{
+.carrouselButtonKnowledge {
     margin: 37rem 0 0 12rem;
 }
 
@@ -286,7 +286,7 @@ a {
     z-index: -1;
 }
 
-.atelierKnowledgeDeco{
+.atelierKnowledgeDeco {
     position: absolute;
     height: 30%;
     top: 5rem;
@@ -294,13 +294,13 @@ a {
     z-index: -1;
 }
 
-.bottomBackgroundKnowledge{
+.bottomBackgroundKnowledge {
     position: absolute;
     bottom: 0;
     left: 0;
 }
 
-.knowledgeSection{
+.knowledgeSection {
     position: relative;
     z-index: 10;
     background-color: #EEE4DB;
@@ -309,6 +309,7 @@ a {
     /* justify-content: center; */
     padding: 15rem 10rem;
 }
+
 /*illu knowledge*/
 .gridKnowledge {
     display: grid;
@@ -318,14 +319,14 @@ a {
     align-items: center;
 }
 
-.gridKnowledge_fig{
+.gridKnowledge_fig {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.gridKnowledge_fig figcaption{
-    text-transform:uppercase;
+.gridKnowledge_fig figcaption {
+    text-transform: uppercase;
     font-family: "Kufam", sans-serif;
     font-size: 1.5rem;
     font-weight: bold;
@@ -355,7 +356,7 @@ a {
 }
 
 /************* CONTACT **********************/
-.contactSection{
+.contactSection {
     background-color: #EEE4DB;
     position: relative;
     z-index: 10;
@@ -364,12 +365,12 @@ a {
     align-items: center;
 }
 
-.contactSection_background_container{
+.contactSection_background_container {
     display: flex;
     justify-content: center;
 }
 
-.contactSection_background{
+.contactSection_background {
     position: absolute;
     top: 0;
     z-index: -1;
@@ -377,7 +378,7 @@ a {
     margin: auto;
 }
 
-.contactSection_H1{
+.contactSection_H1 {
     position: relative;
     left: 15rem;
     text-align: right;
@@ -388,35 +389,35 @@ a {
     color: #7F8263;
 }
 
-.contactSection_p{
-   font-family: "Play", sans-serif;
-   font-weight: bold; 
-   font-size: 2rem;
-   text-align: center;
-   color: #EEE4DB;
-   padding: 2rem 20rem;
+.contactSection_p {
+    font-family: "Play", sans-serif;
+    font-weight: bold;
+    font-size: 2rem;
+    text-align: center;
+    color: #EEE4DB;
+    padding: 2rem 20rem;
 }
 
-.contactSection_deco7{
+.contactSection_deco7 {
     position: absolute;
     top: -6rem;
     left: 6rem;
 }
 
-.contactSection_form{
+.contactSection_form {
     font-family: "Play", sans-serif;
     background-color: #EEE4DB;
-    border: 2px solid #7F8263;
     border-radius: 1rem;
     padding: 3rem;
+    box-shadow: 5px 5px 0px #7F8263;
 }
 
-.contactSection_formName{
+.contactSection_formName {
     display: flex;
     justify-content: space-between;
 }
 
-.contactSection_form li{
+.contactSection_form li {
     display: flex;
     flex-direction: column;
     font-size: 2rem;
@@ -426,10 +427,35 @@ a {
 }
 
 .contactSection_form input,
-.contactSection_form textarea{
+.contactSection_form textarea {
     font-family: "Play", sans-serif;
     font-size: 2rem;
     background-color: transparent;
     border: none;
     border-bottom: 1px solid #323232;
+}
+
+.contactSection_button {
+    display: flex;
+    justify-content: right;
+}
+
+.contactSection_buttonDeco {
+    background-color: #EEE4DB;
+    color: #7F8263;
+    border: 1px solid #7F8263;
+    border-radius: 1rem;
+    padding: 0.5rem 1.5rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-family: "Play", sans-serif;
+    box-shadow: 4px 4px 0px #7F8263;
+}
+
+.contactSection_buttonDeco:hover{
+    position: relative;
+    left: 4px;
+    top: 4px;
+    box-shadow: none;
+    cursor: pointer;
 }
