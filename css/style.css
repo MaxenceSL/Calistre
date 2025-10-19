@@ -118,7 +118,7 @@ a {
 
 .sketchAccueil {
     text-align: center;
-    background-image: url(./ressources/Rectangle\ 4.png);
+    background-image: url(../ressources/Rectangle\ 4.png);
     background-size: cover;
     background-position: center;
     height: 29rem;
@@ -286,6 +286,20 @@ a {
     z-index: -1;
 }
 
+.atelierKnowledgeDeco{
+    position: absolute;
+    height: 30%;
+    top: 5rem;
+    right: 20rem;
+    z-index: -1;
+}
+
+.bottomBackgroundKnowledge{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
 .knowledgeSection{
     position: relative;
     z-index: 10;
@@ -293,7 +307,7 @@ a {
     padding-top: 15rem;
     display: flex;
     /* justify-content: center; */
-    padding: 10rem;
+    padding: 15rem 10rem;
 }
 /*illu knowledge*/
 .gridKnowledge {
@@ -338,4 +352,84 @@ a {
     /* opacity: 1; */
     transform: translateX(100px) scale(0.85) rotate(6deg);
     z-index: 0;
+}
+
+/************* CONTACT **********************/
+.contactSection{
+    background-color: #EEE4DB;
+    position: relative;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contactSection_background_container{
+    display: flex;
+    justify-content: center;
+}
+
+.contactSection_background{
+    position: absolute;
+    top: 0;
+    z-index: -1;
+    width: 90%;
+    margin: auto;
+}
+
+.contactSection_H1{
+    position: relative;
+    left: 15rem;
+    text-align: right;
+    font-weight: bold;
+    font-size: 4rem;
+    text-transform: uppercase;
+    font-family: "Kufam", sans-serif;
+    color: #7F8263;
+}
+
+.contactSection_p{
+   font-family: "Play", sans-serif;
+   font-weight: bold; 
+   font-size: 2rem;
+   text-align: center;
+   color: #EEE4DB;
+   padding: 2rem 20rem;
+}
+
+.contactSection_deco7{
+    position: absolute;
+    top: -6rem;
+    left: 6rem;
+}
+
+.contactSection_form{
+    font-family: "Play", sans-serif;
+    background-color: #EEE4DB;
+    border: 2px solid #7F8263;
+    border-radius: 1rem;
+    padding: 3rem;
+}
+
+.contactSection_formName{
+    display: flex;
+    justify-content: space-between;
+}
+
+.contactSection_form li{
+    display: flex;
+    flex-direction: column;
+    font-size: 2rem;
+    color: #7F8263;
+    font-weight: bold;
+    padding-bottom: 3rem;
+}
+
+.contactSection_form input,
+.contactSection_form textarea{
+    font-family: "Play", sans-serif;
+    font-size: 2rem;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #323232;
 }
