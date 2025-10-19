@@ -118,7 +118,7 @@ a {
 
 .sketchAccueil {
     text-align: center;
-    background-image: url(../ressources/Rectangle\ 4.png);
+    background-image: url(./ressources/Rectangle\ 4.png);
     background-size: cover;
     background-position: center;
     height: 29rem;
