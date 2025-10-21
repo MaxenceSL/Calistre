@@ -22,9 +22,16 @@
             <button id="menu-toggle">☰ Menu</button>
             <div id="menu">
                 <button id="menu-close">Fermer</button>
-                <a href="#accueil">Accueil</a>
-                <a href="#a-propos">À propos</a>
-                <a href="#contact">Contact</a>
+                <a class="menu_links" href="#accueil">Accueil</a>
+                <a class="menu_links" href="#a-propos">À propos</a>
+                <a class="menu_links" href="#contact">Contact</a>
+                <span class="menu_links_comm">
+                    <a href=""><img class="menu_links_logo" src="./ressources/logo/Facebook_Logo_Primary.png" alt="logo facebook couleur"></a>
+                    <a href=""><img class="menu_links_logo" src="./ressources/logo/Instagram_Glyph_Gradient.png" alt="logo Insta couleur"></a>
+                    <a href=""><img class="menu_links_logo" src="./ressources/logo/logo-black.png" alt="logo x black"></a>
+                    <a href=""><img class="menu_links_logo" src="./ressources/logo/Digital_Glyph_Green.png" alt="logo whatsapp couleur"></a>
+                </span>
+
             </div>
         </nav>
         <div class="logoTitle">
@@ -339,35 +346,23 @@
                         <h4>A mon sujet</h4>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus non nisl eu diam dignissim
                             pharetra. Duis vitae purus libero. Donec ac justo hendrerit, facilisis dolor in, tristique
-                            massa.
-                            Quisque
-                            ultrices purus mauris, eu pulvinar augue sodales ut. Quisque varius arcu et lacus dignissim,
-                            ac
-                            laoreet
-                            turpis mattis. Fusce vel hendrerit tortor, non ullamcorper dolor. Suspendisse sed libero
-                            quis
-                            augue
-                            facilisis eleifend. Phasellus nunc purus, tristique quis maximus sit amet, laoreet eu odio.
-                            Vestibulum
-                            pharetra porta magna, et ornare sem faucibus.</p>
+                            massa. Quisque ultrices purus mauris, eu pulvinar augue sodales ut. Quisque varius arcu et
+                            lacus dignissim, ac laoreet turpis mattis. Fusce vel hendrerit tortor, non ullamcorper
+                            dolor. Suspendisse sed libero quis augue facilisis eleifend. Phasellus nunc purus, tristique
+                            quis maximus sit amet, laoreet eu odio. Vestibulum pharetra porta magna, et ornare sem
+                            faucibus.</p>
                     </span>
                 </div>
                 <div class="articleAbout_myself">
                     <span>
                         <h4>L'atelier</h4>
-                        <p>LLorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus non nisl eu diam
-                            dignissim
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus non nisl eu diam dignissim
                             pharetra. Duis vitae purus libero. Donec ac justo hendrerit, facilisis dolor in, tristique
-                            massa.
-                            Quisque
-                            ultrices purus mauris, eu pulvinar augue sodales ut. Quisque varius arcu et lacus dignissim,
-                            ac
-                            laoreet
-                            turpis mattis. Fusce vel hendrerit tortor, non ullamcorper dolor. Suspendisse sed libero
-                            quis augue
-                            facilisis eleifend. Phasellus nunc purus, tristique quis maximus sit amet, laoreet eu odio.
-                            Vestibulum
-                            pharetra porta magna, et ornare sem faucibus.</p>
+                            massa. Quisque ultrices purus mauris, eu pulvinar augue sodales ut. Quisque varius arcu et
+                            lacus dignissim, ac laoreet turpis mattis. Fusce vel hendrerit tortor, non ullamcorper
+                            dolor. Suspendisse sed libero quis augue facilisis eleifend. Phasellus nunc purus, tristique
+                            quis maximus sit amet, laoreet eu odio. Vestibulum pharetra porta magna, et ornare sem
+                            faucibus.</p>
                     </span>
                     <!-- <img class="articleAbout_imgAtelier" src="./ressources/pic_atelier.svg" alt=""> -->
                 </div>
@@ -532,7 +527,55 @@
         </section>
     </main>
 
-    <footer>
+    <footer class="footer">
+        <div class="logoCalistre footer_logoCalistre">
+            <img src="./ressources/logoBeige.png" alt="logo Calistre">
+            <h1 class="titleH1">Calistre</h1>
+        </div>
+        <div class="pages_links">
+            <span class="contactMe">
+                <a class="link_pages" href="">Me contacter</a>
+                <p class="contact_descr">Je me tiens à votre disposition pour toute demande d’information, de prise de
+                    rendez-vous ou de
+                    devis.
+                </p>
+                <ul class="list_links_communication">
+                    <li>
+                        <a class="logo_communication_link" href="">
+                            <img class="logo_communication" src="./ressources/logo/Facebook_Logo_Secondary.png"
+                                alt="logo facebook">
+                        </a>
+                    </li>
+                    <li>
+                        <a class="logo_communication_link" href="">
+                            <img class="logo_communication" src="./ressources/logo/Instagram_Glyph_White.png"
+                                alt="logo facebook">
+                        </a>
+                    </li>
+                    <li>
+                        <a class="logo_communication_link" href="">
+                            <img class="logo_communication" src="./ressources/logo/logo-white.png" alt="logo facebook">
+                        </a>
+                    </li>
+                    <li>
+                        <a class="logo_communication_link" href="">
+                            <img class="logo_communication" src="./ressources/logo/Digital_Glyph_White.png"
+                                alt="logo facebook">
+                        </a>
+                    </li>
+                </ul>
+            </span>
+            <a class="link_pages" href="">Mes Réalisations</a>
+            <a class="link_pages" href="">A Propos</a>
+            <span>
+                <h4>Mes coordonnées</h4>
+                <p class="coordo_Calistre">Calistre</p>
+                <p>rue du cul</p>
+                <p>75008 Paris</p>
+                <p class="coordo_tel">06xxxxxxx</p>
+                <p>contact@calistre.fr</p>
+            </span>
+        </div>
     </footer>
     <script src="./js/appMenu.js"></script>
     <script src="./js/appCarouselAtelier.js"></script>

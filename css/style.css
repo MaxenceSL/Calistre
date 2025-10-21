@@ -51,11 +51,21 @@ nav {
     margin: 0 0 2rem;
 }
 
-a {
+.menu_links {
     text-decoration: none;
     color: #7F8263;
     font-size: 2.5rem;
     margin-top: 1.5rem;
+}
+
+.menu_links_comm{
+    position: absolute;
+    bottom: 3rem;
+}
+
+.menu_links_logo{
+    width: 2rem;
+    padding-right: 1rem;
 }
 
 #menu.show {
@@ -363,6 +373,7 @@ a {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-bottom: 15rem;
 }
 
 .contactSection_background_container {
@@ -452,10 +463,69 @@ a {
     box-shadow: 4px 4px 0px #7F8263;
 }
 
-.contactSection_buttonDeco:hover{
+.contactSection_buttonDeco:hover {
     position: relative;
     left: 4px;
     top: 4px;
     box-shadow: none;
     cursor: pointer;
+}
+
+.footer {
+    background-color: #7F8263;
+    display: flex;
+    flex-direction: column;
+    padding: 0 5rem 0 2rem;
+}
+
+.logo_communication {
+    width: 2rem;
+}
+
+.pages_links {
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem 4rem;
+}
+
+.list_links_communication {
+    display: flex;
+    width: fit-content;
+    padding-top: 4rem;
+}
+
+.list_links_communication li{
+    padding-right: 1rem;
+}
+
+.pages_links h4,
+.link_pages {
+    color: #CBA588;
+    font-family: "Kufam", sans-serif;
+    font-size: 1.25rem;
+    padding-bottom: 1rem;
+    text-decoration: none;
+}
+
+.pages_links p {
+    color: #EEE4DB;
+    font-family: "Play", sans-serif;
+}
+
+.contactMe {
+    display: flex;
+    flex-direction: column;
+    width: 25rem;
+}
+
+.footer_logoCalistre {
+    padding: 4rem 4rem 1rem;
+}
+
+.coordo_Calistre {
+    text-transform: uppercase;
+}
+
+.coordo_tel {
+    padding: 1rem 0;
 }
