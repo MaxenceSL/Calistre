@@ -2,6 +2,7 @@ header {
     background-color: #7F8263;
     display: flex;
     justify-content: center;
+    padding-bottom: 5rem;
 }
 
 /**************MENU*************/
@@ -107,7 +108,7 @@ nav {
     align-items: center;
     justify-content: space-between;
     font-size: 1.25rem;
-    padding-top: 3rem;
+    padding-top: 4rem;
 }
 
 .accueilH2,
@@ -146,9 +147,10 @@ nav {
 /*****Décro Bulle marron*****/
 .atelierBackground {
     position: absolute;
-    top: -6rem;
+    top: -5rem;
     right: 0;
     z-index: -1;
+    height: 90%;
 }
 
 .atelierBackground_decoration {
@@ -164,17 +166,12 @@ nav {
     position: relative;
     display: flex;
     justify-content: space-between;
-    padding: 10rem;
-    padding-top: 5rem;
+    padding: 10rem 0 20rem 10rem;
     background-color: #EEE4DB;
     z-index: 100;
 }
 
 /*Carousel*/
-.atelierPictures {
-    padding-top: 7rem;
-}
-
 .cadre-atelier-img-container,
 .cadre-knowledge-img-container {
     position: absolute;
@@ -253,14 +250,24 @@ nav {
 /*ARTICLE*/
 .articleAbout {
     font-family: "Play", sans-serif;
-    width: 40%;
+    width: 50%;
     color: #EEE4DB;
+    padding-top: 5rem;
     /* color: #323232; */
     /* margin-right: 5rem; */
 }
 
+.latelier{
+    display: flex;
+}
+
+.svg_aPropos{
+    width: 25rem;
+}
+
 .articleAboutH2 {
-    font-size: 6rem;
+    font-size: 3.5rem;
+    text-transform: uppercase;
     font-weight: bold;
     font-family: "Kufam", sans-serif;
 }
@@ -276,6 +283,11 @@ nav {
     margin-bottom: 2rem;
 }
 
+.articleAbout_latelier {
+    display: flex;
+    flex-direction: column;
+}
+
 .articleAbout_myself h4 {
     color: #323232;
 }
@@ -285,7 +297,12 @@ nav {
 }
 
 .articleAbout p {
-    padding: 0.5rem;
+    padding: 0.5rem 6rem 0 3rem;
+}
+
+.articleAbout_latelier p{
+    padding: 3rem;
+    width: 19rem;
 }
 
 /***** KNOWLEDGE *****/
@@ -294,13 +311,15 @@ nav {
     top: 0;
     left: 0;
     z-index: -1;
+        height: 90%;
 }
 
 .atelierKnowledgeDeco {
     position: absolute;
     height: 30%;
-    top: 5rem;
-    right: 20rem;
+    top: 0;
+    right: 25rem;
+    transform: rotate(5deg);
     z-index: -1;
 }
 
