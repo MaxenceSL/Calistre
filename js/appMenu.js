@@ -17,3 +17,10 @@ document.addEventListener('click', (e) => {
         menu.classList.remove('show');
     }
 });
+
+function focusInput() {
+      // Donne le focus à l’input une fois la page descendue
+      setTimeout(() => {
+        document.getElementById('name').focus();
+      }, 300); // petit délai pour laisser le scroll se faire
+    }

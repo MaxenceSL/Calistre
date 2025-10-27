@@ -121,6 +121,10 @@ q {
 	quotes: none;
 }
 
+p{
+	line-height: 1.5rem;
+}
+
 blockquote:before,
 blockquote:after,
 q:before,
