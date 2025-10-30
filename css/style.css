@@ -658,7 +658,7 @@ nav {
     padding: 2rem;
     display: flex;
     flex-direction: column;
-    width: 23rem;
+    width: 20rem;
 }
 
 .servicesCartes_h3 {
@@ -702,7 +702,7 @@ nav {
     padding-right: 3rem;
 }
 
-.servicesCartes_liste p {
+.servicesCartes_liste_p {
     padding-right: 3rem;
 }
 
@@ -724,7 +724,7 @@ nav {
     border: none;
     padding: 1rem 2rem;
     border-radius: 2rem;
-    width: 22.5rem;
+    width: 22rem;
     box-shadow: 4px 5px 0px #7F8263;
     cursor: pointer;
 }
@@ -1028,7 +1028,7 @@ nav {
         height: 110%;
     }
 
-    .atelierKnowledge{
+    .atelierKnowledge {
         height: 95%;
     }
 
@@ -1163,25 +1163,113 @@ nav {
         z-index: 0;
     }
 
-    .portfolioArticle_h2{
+    .portfolioArticle_h2,
+    .servicessection_h2,
+    .servicesCartes_h3,
+    .contactSection_H1 {
         font-size: 1.5rem;
     }
 
-    .portfolioArticle_p{
+    .portfolioArticle_p,
+    .servicessection_p {
         width: auto;
     }
 
-    .portfolio_filters{
+    .portfolio_filters {
         display: flex;
         flex-direction: column;
     }
 
-    .portfolio_filters button{
+    .portfolio_filters button {
         margin-bottom: 1rem;
     }
 
     .portfolioArticle_img-container,
-    .portfolioArticle_card{
+    .portfolioArticle_card {
         width: 20rem;
+    }
+
+    .servicesCartes_liste_h4,
+    .servicesCartes_liste_p {
+        font-size: 0.875rem;
+        line-height: 1rem;
+        padding-right: 0;
+    }
+
+    .servicesCartes {
+        flex-direction: column;
+        padding-bottom: 2rem;
+    }
+
+    .servicesCartes_article {
+        width: 15rem;
+    }
+
+    .servicesCartes_button {
+        width: 17rem;
+    }
+
+    .servicesCartes_button {
+        font-size: 1rem;
+    }
+
+    .servicesCartes_button_price {
+        font-size: 0.7rem;
+        right: -0.5rem;
+        top: 2.7rem;
+        padding: 1rem 1rem;
+        transform: rotate(-25deg);
+    }
+
+    .sousSection_MesServices {
+        padding: 1rem;
+    }
+
+    .sousSection_MesServices_ensemble {
+        flex-direction: column;
+    }
+
+    .sousSection_avantage {
+        padding: 1rem 1rem 3rem;
+    }
+
+    .sousSection_MesServices_p {
+        width: auto;
+    }
+
+    .contactSection_form {
+        padding: 0;
+        padding: 1rem;
+        background-color: #CBA588;
+    }
+
+    .contactSection_H1 {
+        left: 0;
+        text-align: center;
+    }
+
+    .contactSection_p {
+        font-size: 1rem;
+        padding: 1rem 2rem;
+    }
+
+    .contactSection_formName {
+        flex-direction: column;
+    }
+
+    .contactSection_form li {
+        font-size: 1.5rem;
+    }
+
+    .contactSection_form input,
+    .contactSection_form textarea {
+        width: 80vw;
+        font-size: 1rem;
+        padding-top: 1rem;
+        /* padding-right: 1rem; */
+    }
+
+    .footer {
+        flex-direction: column;
     }
 }
