@@ -156,7 +156,7 @@
                 <article class="articleAbout latelier">
                     <img class="svg_atelier" src="./ressources/image24.svg" alt="illustration mon atelier">
                     <span class="articleAbout_latelier">
-                        <h2 class="articleAboutH2 aboutH2Smartphone">L'atelier</h2>
+                        <h2 class="articleKnowledgeH2 aboutH2Smartphone">L'atelier</h2>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus non nisl eu diam dignissim
                             pharetra. Duis vitae purus libero. Donec ac justo hendrerit, facilisis dolor in, tristique
                             massa. Quisque ultrices purus mauris, eu pulvinar augue sodales ut. Quisque varius arcu et
@@ -205,7 +205,8 @@
 
             <div class="knowledgePictures">
                 <div class="cadreKnowledge">
-                    <img class="img_CadreKnowledge" src="./ressources/knowledgeCadre.png" alt="cadre déco image section atelier">
+                    <img class="img_CadreKnowledge" src="./ressources/knowledgeCadre.png"
+                        alt="cadre déco image section atelier">
                 </div>
                 <div class="cadre-knowledge-img-container">
                     <img class="cadre-atelier-img" src="./ressources/knowledgeillu1.avif"
@@ -279,6 +280,11 @@
                         <div class="portfolioArticle_img-container">
                             <img class="portfolioArticle_img" src="./ressources/Image/portrait3soeurs.jpg"
                                 alt="photo cadre1">
+                            <div class="hoverPortfolio">
+                                <img class="hoverPortfolio_img" src="./ressources/timerWhite.png"
+                                    alt="illustration délai fabrication">
+                                <p class="hoverPortfolio_p">Juillet 2025</p>
+                            </div>
                         </div>
                         <div class="portfolioArticle_descr">
                             <h3>Cadre sur mesure</h3>
@@ -351,7 +357,7 @@
                     <article class="servicesCartes_article">
                         <h3 class="servicesCartes_h3">Création sur mesure</h3>
                         <div class="servicesCartes_delai">
-                            <img src="./ressources/timer 1.png" alt="illustration délai fabrication">
+                            <img src="./ressources/timer1.png" alt="illustration délai fabrication">
                             <p class="servicesCartes_delai_p">2-3 semaines</p>
                         </div>
                         <section class="servicesCartesSection">
@@ -395,7 +401,7 @@
                     <article class="servicesCartes_article">
                         <h3 class="servicesCartes_h3">Illustration</h3>
                         <div class="servicesCartes_delai">
-                            <img src="./ressources/timer 1.png" alt="illustration délai fabrication">
+                            <img src="./ressources/timer1.png" alt="illustration délai fabrication">
                             <p class="servicesCartes_delai_p">1-2 semaines</p>
                         </div>
                         <section class="servicesCartesSection">
@@ -429,7 +435,7 @@
                     <article class="servicesCartes_article">
                         <h3 class="servicesCartes_h3">évènements</h3>
                         <div class="servicesCartes_delai">
-                            <img src="./ressources/timer 1.png" alt="illustration délai fabrication">
+                            <img src="./ressources/timer1.png" alt="illustration délai fabrication">
                             <p class="servicesCartes_delai_p">2-3 semaines</p>
                         </div>
                         <section class="servicesCartesSection">
@@ -615,11 +621,19 @@
         <p>© 2025 Calistre Encadrement. Tous droits réservés.</p>
         <p>Fabriqué pour encadrer vos chefs-d’œuvre… et vos posters douteux. </p>
     </div>
+
+    <!-- Fenêtre d'image agrandie -->
+    <div id="imageOverlay" class="hidden">
+        <span class="closeOverlay">&times;</span>
+        <img id="overlayImg" src="" alt="Image agrandie">
+    </div>
+
     <script src="./js/appMenu.js"></script>
     <script src="./js/appCarouselAtelier.js"></script>
     <script src="./js/appCarouselKnowledge.js"></script>
     <script src="./js/appPortfolio.js"></script>
     <script src="./js/appCadreAtelier.js"></script>
+    <script src="./js/appAnimationTitle.js"></script>
 </body>
 
 </html>
