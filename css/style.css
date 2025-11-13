@@ -1,5 +1,5 @@
 header {
-    background-color: #7F8263;
+    background-color: #315e5977;
     display: flex;
     justify-content: center;
     padding-bottom: 5rem;
@@ -21,7 +21,7 @@ nav {
     background: none;
     border: none;
     margin: 2rem;
-    color: #ED8762;
+    color: #DA5F71;
     font-family: "Play", sans-serif;
     font-size: 1.25rem;
     text-transform: uppercase;
@@ -51,7 +51,7 @@ nav {
     cursor: pointer;
     text-align: left;
     font-size: 1.15rem;
-    color: #7F8263;
+    color: #315E59;
     font-family: "Play", sans-serif;
     text-transform: uppercase;
     margin: 0 0 2rem;
@@ -59,9 +59,13 @@ nav {
 
 .menu_links {
     text-decoration: none;
-    color: #7F8263;
+    color: #315E59;
     font-size: 2.5rem;
     margin-top: 1.5rem;
+}
+
+.menu_links:hover {
+    color: #DA5F71;
 }
 
 .menu_links_comm {
@@ -107,7 +111,7 @@ nav {
 /******MAIN*****/
 /*Titre ACcueil*/
 .titlesAccueil {
-    background-color: #7F8263;
+    background-color: #315e5977;
     /* width: 100vw; */
     display: flex;
     align-items: center;
@@ -150,13 +154,13 @@ nav {
 }
 
 /*****Décro Bulle marron*****/
-.atelierBackground {
+/* .atelierBackground {
     position: absolute;
     top: -6rem;
     right: 0;
     z-index: -1;
     height: 100%;
-}
+} */
 
 /*Atelier A PROPOS*/
 
@@ -164,8 +168,8 @@ nav {
     position: relative;
     display: flex;
     justify-content: space-between;
-    padding: 10rem 0 20rem 10rem;
-    background-color: #EEE4DB;
+    padding: 10rem 0 15rem 10rem;
+    background-color: #CAC9C1;
     z-index: 100;
 }
 
@@ -173,19 +177,110 @@ nav {
 .cadre-atelier-img-container,
 .cadre-knowledge-img-container {
     position: absolute;
+    /* box-shadow: inset 0 4px 4px rgb(255, 8, 8); */
     overflow: hidden;
-    border-radius: 0.5rem;
-    width: 30rem;
-    height: 36rem;
-    border: 3px solid #7F8263;
+    /* border-radius: 0.5rem; */
+    width: 25rem;
+    height: 31rem;
+    border: 3px solid #EEE4DB;
     margin-right: 0.5rem;
     transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.cadre-knowledge-img-container {
+    border: 3px solid #DA5F71;
+}
+
+.cadre-atelier-img-container::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    box-shadow: inset 0 0 30px rgb(0, 0, 0);
+    pointer-events: none;
+    z-index: 2;
+}
+
+.cadre-knowledge-img-container::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    box-shadow: inset 0 0 30px #433338;
+    pointer-events: none;
+    z-index: 2;
 }
 
 .cadre-atelier-img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+.cadre {
+    position: relative;
+}
+
+.sousCartePlacement {
+    position: relative;
+}
+
+.sous-carte_atelier {
+    position: absolute;
+    top: -2rem;
+    left: -2.3rem;
+    width: 24rem;
+    height: 31rem;
+    border: 50px solid transparent;
+    border-image: url('../ressources/textile-texture.jpg') 110 stretch;
+    transition: transform 0.2s ease-out;
+}
+
+.sous-carte_atelier::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 20px;
+    /* épaisseur supplémentaire */
+    background: url('../ressources/textile-texture.jpg') center / cover no-repeat;
+}
+
+.cadreH_atelier {
+    position: absolute;
+    top: -4.3rem;
+    left: -4.8rem;
+    transform: rotate(10deg) translateY(-60px) translateX(-45px);
+    transition: transform 0.1s linear, opacity 0.1s linear;
+    z-index: 11;
+}
+
+.cadreB_atelier {
+    position: absolute;
+    top: 35rem;
+    left: -4.8rem;
+    transform: rotate(15deg) translateY(20px) translateX(-45px);
+    transition: transform 0.1s linear, opacity 0.1s linear;
+}
+
+.cadreG_atelier {
+    position: absolute;
+    top: -4.55rem;
+    left: -4.55rem;
+    transform: rotate(-15deg) translateY(-60px) translateX(-100px);
+    transition: transform 0.1s linear, opacity 0.1s linear;
+    z-index: 11;
+}
+
+.cadreD_atelier {
+    position: absolute;
+    top: -4.5rem;
+    right: -13.2rem;
+}
+
+.cadreCrochet_atelier {
+    position: absolute;
+    top: -7rem;
+    left: 11rem;
 }
 
 .atelierPictures .cadre-atelier-img-container:nth-child(1) {
@@ -195,28 +290,27 @@ nav {
 
 /* Position des cartes empilées */
 .atelierPictures .cadre-atelier-img-container:nth-child(2) {
-    transform: translateX(40px) scale(0.95) rotate(3deg);
     z-index: 2;
+    opacity: 0;
 }
 
 .atelierPictures .cadre-atelier-img-container:nth-child(3) {
-    transform: translateX(70px) scale(0.9) rotate(5deg);
     z-index: 1;
+    opacity: 0;
 }
 
 .atelierPictures .cadre-atelier-img-container:nth-child(4) {
-    /* opacity: 1; */
-    transform: translateX(100px) scale(0.85) rotate(6deg);
     z-index: 0;
+    opacity: 0;
 }
 
 /* Boutons */
 .navig,
 .navigKnowledge {
     /* transform: translateY(-50%); */
-    background: #EEE4DB;
-    box-shadow: 3px 1.8px 0px #7F8263;
-    border: 3px solid #7F8263;
+    background: #CAC9C1;
+    box-shadow: 3px 1.8px 0px #26483B;
+    border: 3px solid #26483B;
     width: 3rem;
     height: 3rem;
     font-size: 1.25rem;
@@ -228,7 +322,7 @@ nav {
 
 .carrouselButtonAtelier,
 .carrouselButtonKnowledge {
-    margin: 37rem 0 0 16rem;
+    margin: 38rem 0 0 10rem;
 }
 
 .navig:hover,
@@ -249,7 +343,7 @@ nav {
 .articleAbout {
     font-family: "Play", sans-serif;
     width: 50%;
-    color: #EEE4DB;
+    color: #26483B;
     /* padding-top: 5rem; */
     /* color: #323232; */
     /* margin-right: 5rem; */
@@ -269,7 +363,7 @@ nav {
     text-transform: uppercase;
     font-weight: bold;
     font-family: "Kufam", sans-serif;
-    padding-left: 1rem;
+    padding-left: 3rem;
     width: 19rem;
 }
 
@@ -288,7 +382,7 @@ nav {
 }
 
 .one_icon_atelier {
-    color: #EEE4DB;
+    color: #26483B;
     font-family: "Play", sans-serif;
     display: flex;
 }
@@ -300,6 +394,7 @@ nav {
 }
 
 .one_icon_atelier_p {
+    color: #A4835B;
     padding-top: 0.5rem;
     line-height: normal;
     font-size: 0.825rem;
@@ -327,11 +422,13 @@ nav {
 
 .articleAbout_p {
     padding: 0.5rem 6rem 0 1rem;
+    line-height: 1.75rem;
 }
 
 .articleAbout_latelier p {
     padding: 3rem;
     width: 19rem;
+    line-height: 1.75rem;
 }
 
 .chiffresAboutMe {
@@ -339,12 +436,13 @@ nav {
     justify-content: space-between;
     margin: 2rem 5rem 0 1rem;
     padding-top: 2rem;
-    border-top: 1px solid #EEE4DB;
+    border-top: 1px solid #26483B;
 }
 
 .chiffresAboutMe_H4 {
     font-size: 2.5rem;
     font-weight: bold;
+    color: #A4835B;
 }
 
 .chiffresAboutMe_p {
@@ -352,18 +450,18 @@ nav {
 }
 
 /***** KNOWLEDGE *****/
-.atelierKnowledge {
+/* .atelierKnowledge {
     position: absolute;
     top: 0;
     left: 0;
     z-index: -1;
     height: 90%;
-}
+} */
 
 .atelierKnowledgeDeco {
     position: absolute;
-    height: 30%;
-    top: 0;
+    /* height: 100%; */
+    bottom: -20rem;
     right: 25rem;
     transform: rotate(5deg);
     z-index: -1;
@@ -378,7 +476,7 @@ nav {
 .knowledgeSection {
     position: relative;
     z-index: 10;
-    background-color: #EEE4DB;
+    background-color: #CAC9C1;
     display: flex;
     /* justify-content: center; */
     padding: 15rem 5rem;
@@ -408,25 +506,31 @@ nav {
     padding-top: 1rem;
 }
 
+.knowledgePictures {
+    padding: 2rem 0 0 7rem;
+    position: relative;
+}
+
+.cadreKnowledge {
+    position: absolute;
+    top: -4rem;
+    left: 2.5rem;
+}
+
 .knowledgePictures .cadre-knowledge-img-container:nth-child(1) {
-    transform: translateX(50px) scale(1);
     z-index: 3;
 }
 
 /* Position des cartes empilées */
 .knowledgePictures .cadre-knowledge-img-container:nth-child(2) {
-    transform: translateX(90px) scale(0.95) rotate(3deg);
     z-index: 2;
 }
 
 .knowledgePictures .cadre-knowledge-img-container:nth-child(3) {
-    transform: translateX(130px) scale(0.9) rotate(5deg);
     z-index: 1;
 }
 
 .knowledgePictures .cadre-knowledge-img-container:nth-child(4) {
-    /* opacity: 1; */
-    transform: translateX(150px) scale(0.85) rotate(6deg);
     z-index: 0;
 }
 
@@ -452,16 +556,17 @@ nav {
 }
 
 .portfolioArticle_h2 {
-    color: #7F8263;
+    color: #26483B;
     font-size: 3.5rem;
     text-transform: uppercase;
     font-weight: bold;
     font-family: "Kufam", sans-serif;
+    padding-bottom: 2rem;
 }
 
 .portfolioArticle_p {
     font-family: "Play", sans-serif;
-    color: #7F8263;
+    color: #26483B;
     width: 50%;
     text-align: center;
 }
@@ -476,15 +581,15 @@ nav {
     border: none;
     padding: 0.5rem 1rem;
     font-family: "Play", sans-serif;
-    color: #7F8263;
+    color: #26483B;
     cursor: pointer;
     margin-right: 1rem;
     background-color: #EEE4DB;
-    box-shadow: 3px 4px 0px #7F8263;
+    box-shadow: 3px 4px 0px #26483B;
 }
 
 .portfolio_filters button.active {
-    background-color: #7F8263;
+    background-color: #26483B;
     color: #EEE4DB;
     box-shadow: none;
     position: relative;
@@ -559,17 +664,18 @@ nav {
 
 /************ SOUS SECTION PORTFOLIO ********/
 .sousSection_MesServices {
-    background-color: #EEE4DB;
+    background-color: #CAC9C1;
     padding: 0 10rem 5rem;
 }
 
 .sousSection_MesServices_ensemble {
     padding: 1.5rem 0;
-    border: 1px solid #7F8263;
+    border: 1px solid #26483B;
+    box-shadow: 1px 1px 5px #323232;
     border-radius: 2rem;
     display: flex;
     justify-content: space-evenly;
-    background-color: #EEE4DB;
+    background-color: #CAC9C1;
 }
 
 .sousSection_avantage {
@@ -577,14 +683,14 @@ nav {
     flex-direction: column;
     align-items: center;
     font-family: "Play", sans-serif;
-    color: #7F8263;
+    color: #26483B;
 }
 
 .sousSection_MesServices_img_container {
     overflow: hidden;
     width: 100px;
     height: 100px;
-    background-color: #7F8263;
+    background-color: #26483B;
     border-radius: 2rem;
     display: flex;
     align-items: center;
@@ -630,7 +736,7 @@ nav {
 
 .servicessection_h2 {
     padding: 2rem 0;
-    color: #7F8263;
+    color: #26483B;
     font-size: 3.5rem;
     text-transform: uppercase;
     font-weight: bold;
@@ -639,7 +745,7 @@ nav {
 
 .servicessection_p {
     font-family: "Play", sans-serif;
-    color: #7F8263;
+    color: #26483B;
     width: 50%;
     text-align: center;
 }
@@ -653,7 +759,7 @@ nav {
 .servicesCartes_article {
     border-radius: 2rem;
     background-color: #cba58890;
-    color: #7F8263;
+    color: #26483B;
     font-family: "Play", sans-serif;
     padding: 2rem;
     display: flex;
@@ -662,7 +768,7 @@ nav {
 }
 
 .servicesCartes_h3 {
-    color: #7F8263;
+    color: #26483B;
     font-size: 2rem;
     text-transform: uppercase;
     font-weight: bold;
@@ -715,8 +821,8 @@ nav {
 }
 
 .servicesCartes_button {
-    color: #7F8263;
-    background-color: #EEE4DB;
+    color: #CAC9C1;
+    background-color: #DA5F71;
     font-weight: bold;
     text-transform: uppercase;
     font-family: "Play", sans-serif;
@@ -725,7 +831,7 @@ nav {
     padding: 1rem 2rem;
     border-radius: 2rem;
     width: 22rem;
-    box-shadow: 4px 5px 0px #7F8263;
+    box-shadow: 4px 5px 0px #26483B;
     cursor: pointer;
 }
 
@@ -741,11 +847,11 @@ nav {
     right: 0.5rem;
     top: 4rem;
     font-size: 1.25rem;
-    background-color: #ED8762;
+    background-color: #26483B;
     padding: 1.5rem 2rem;
     border-radius: 2rem;
     transform: rotate(-25deg);
-    color: #EEE4DB;
+    color: #DA5F71;
     display: inline-block;
     /* important pour que la transformation fonctionne bien */
 }
@@ -783,37 +889,23 @@ nav {
 
 /************* CONTACT **********************/
 .contactSection {
-    background-color: #EEE4DB;
+    background-color: #CAC9C1;
     position: relative;
     z-index: 10;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-bottom: 15rem;
+    padding: 5rem 0 15rem;
 }
 
-.contactSection_background_container {
-    display: flex;
-    justify-content: center;
-}
-
-.contactSection_background {
-    position: absolute;
-    top: 0;
-    z-index: -1;
-    width: 90%;
-    margin: auto;
-}
 
 .contactSection_H1 {
-    position: relative;
-    left: 15rem;
     text-align: right;
     font-weight: bold;
     font-size: 4rem;
     text-transform: uppercase;
     font-family: "Kufam", sans-serif;
-    color: #7F8263;
+    color: #26483B;
 }
 
 .contactSection_p {
@@ -821,14 +913,9 @@ nav {
     font-weight: bold;
     font-size: 2rem;
     text-align: center;
-    color: #EEE4DB;
+    color: #A4835B;
+    line-height: 2rem;
     padding: 2rem 20rem;
-}
-
-.contactSection_deco7 {
-    position: absolute;
-    top: -6rem;
-    left: 6rem;
 }
 
 .contactSection_form {
@@ -836,19 +923,20 @@ nav {
     background-color: #EEE4DB;
     border-radius: 1rem;
     padding: 3rem;
-    box-shadow: 5px 5px 0px #7F8263;
+    box-shadow: 5px 5px 0px #315E59;
 }
 
 .contactSection_formName {
     display: flex;
     justify-content: space-between;
+    gap: 2rem;
 }
 
 .contactSection_form li {
     display: flex;
     flex-direction: column;
     font-size: 2rem;
-    color: #7F8263;
+    color: #315E59;
     font-weight: bold;
     padding-bottom: 3rem;
 }
@@ -868,15 +956,15 @@ nav {
 }
 
 .contactSection_buttonDeco {
-    background-color: #EEE4DB;
-    color: #7F8263;
-    border: 1px solid #7F8263;
+    background-color: #DA5F71;
+    color: #EEE4DB;
+    border: 1px solid #315E59;
     border-radius: 1rem;
     padding: 0.5rem 1.5rem;
     text-transform: uppercase;
     font-weight: bold;
     font-family: "Play", sans-serif;
-    box-shadow: 4px 4px 0px #7F8263;
+    box-shadow: 4px 4px 0px #315E59;
 }
 
 .contactSection_buttonDeco:hover {
@@ -890,7 +978,7 @@ nav {
 /************FOOTER*********************/
 
 .footer {
-    background-color: #7F8263;
+    background-color: #315E59;
     display: flex;
     justify-content: space-evenly;
     gap: 2rem;
@@ -1038,6 +1126,16 @@ nav {
         height: 18rem;
     }
 
+    .sous-carte_atelier,
+    .cadreH_atelier,
+    .cadreB_atelier,
+    .cadreG_atelier,
+    .cadreD_atelier,
+    .cadreCrochet_atelie,
+    .img_CadreKnowledge {
+        display: none;
+    }
+
     .carrouselButtonAtelier,
     .carrouselButtonKnowledge {
         margin: 0;
@@ -1048,7 +1146,7 @@ nav {
     }
 
     /* Position des cartes empilées */
-    .atelierPictures .cadre-atelier-img-container:nth-child(2) {
+    /* .atelierPictures .cadre-atelier-img-container:nth-child(2) {
         transform: translateX(20px) scale(0.95) rotate(3deg);
     }
 
@@ -1058,10 +1156,9 @@ nav {
     }
 
     .atelierPictures .cadre-atelier-img-container:nth-child(4) {
-        /* opacity: 1; */
         transform: translateX(50px) scale(0.85) rotate(9deg);
         z-index: 0;
-    }
+    } */
 
     .articleAbout {
         padding-top: 18rem;

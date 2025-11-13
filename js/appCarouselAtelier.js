@@ -28,28 +28,59 @@ function prevCard() {
   updateStackMobile();
 }
 
+function vueEclatee(callback) {
+  const cadreH = document.querySelector('.cadreH_atelier');
+  const cadreB = document.querySelector('.cadreB_atelier');
+  const cadreG = document.querySelector('.cadreG_atelier');
+  const cadreD = document.querySelector('.cadreD_atelier');
+  const crochet = document.querySelector('.cadreCrochet_atelier');
+  const sousCarte = document.querySelector('.sous-carte_atelier');
+
+  // Phase 1 : éclatement
+  cadreH.style.transition =
+    cadreB.style.transition =
+    cadreG.style.transition =
+    cadreD.style.transition =
+    crochet.style.transition =
+    sousCarte.style.transition = 'transform 0.5s ease';
+
+  cadreH.style.transform = 'rotate(15deg) translate(20px, -200px)';
+  cadreB.style.transform = 'rotate(15deg) translate(20px, 200px)';
+  cadreG.style.transform = 'rotate(-15deg) translate(-200px, -60px)';
+  cadreD.style.transform = 'rotate(15deg) translate(100px, 60px)';
+  crochet.style.transform = 'rotate(-15deg) translate(150px, -60px)';
+  sousCarte.style.transform = 'rotate(-18deg) translate(-500px, -600px)';
+  sousCarte.style.zIndex = "10";
+
+  // Une fois l’éclatement fini, on change la carte, puis retour normal
+  setTimeout(() => {
+    callback?.();
+
+    // Phase 2 : retour
+    cadreH.style.transform =
+      cadreB.style.transform =
+      cadreG.style.transform =
+      cadreD.style.transform =
+      crochet.style.transform =
+      sousCarte.style.transform = 'none';
+    sousCarte.style.zIndex = "0";
+  }, 500);
+}
+
 function updateStack() {
   stack.forEach((card, index) => {
     card.style.transition = 'transform 0.5s ease, opacity 0.5s ease';
     if (index === 0) {
-      card.style.transform = 'translateX(0) scale(1)';
       card.style.zIndex = 3;
-      card.style.filter = 'blur(0) brightness(100%)';
       card.style.opacity = 1;
     } else if (index === 1) {
-      card.style.transform = 'translateX(40px) scale(0.95) rotate(3deg)';
       card.style.zIndex = 2;
-      card.style.filter = 'blur(2px) brightness(80%)';
       card.style.opacity = 1;
     } else if (index === 2) {
-      card.style.transform = 'translateX(80px) scale(0.9) rotate(5deg)';
       card.style.zIndex = 1;
-      card.style.filter = 'blur(2px) brightness(80%)';
       card.style.opacity = 1;
     } else {
-      card.style.transform = 'translateX(-30px) scale(0.95) rotate(-3deg)';
       card.style.zIndex = 0;
-      card.style.filter = 'blur(2px) brightness(80%)';
       card.style.opacity = 1;
     }
   });
@@ -64,12 +95,10 @@ function updateStackMobile() {
       card.style.filter = 'blur(0) brightness(100%)';
       card.style.opacity = 1;
     } else if (index === 1) {
-      card.style.transform = 'translateX(20px) scale(0.95) rotate(3deg)';
       card.style.zIndex = 2;
       card.style.filter = 'blur(2px) brightness(80%)';
       card.style.opacity = 1;
     } else if (index === 2) {
-      card.style.transform = 'translateX(40px) scale(0.9) rotate(5deg)';
       card.style.zIndex = 1;
       card.style.filter = 'blur(2px) brightness(80%)';
       card.style.opacity = 1;
@@ -83,15 +112,19 @@ function updateStackMobile() {
 }
 
 nextBtn.addEventListener('click', () => {
-  const first = stack.shift();
-  stack.push(first);
-  updateStack();
+  vueEclatee(() => {
+    const first = stack.shift();
+    stack.push(first);
+    updateStack();
+  });
 });
 
 prevBtn.addEventListener('click', () => {
-  const last = stack.pop();
-  stack.unshift(last);
-  updateStack();
+  vueEclatee(() => {
+    const last = stack.pop();
+    stack.unshift(last);
+    updateStack();
+  });
 });
 
 // Initialisation
