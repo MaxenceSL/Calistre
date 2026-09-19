@@ -19,8 +19,20 @@ document.addEventListener('click', (e) => {
 });
 
 function focusInput() {
-      // Donne le focus à l’input une fois la page descendue
-      setTimeout(() => {
+    // Donne le focus à l’input une fois la page descendue
+    setTimeout(() => {
         document.getElementById('name').focus();
-      }, 300); // petit délai pour laisser le scroll se faire
-    }
+    }, 300); // petit délai pour laisser le scroll se faire
+}
+
+(function () {
+    const mobileQuery = window.matchMedia('(max-width: 800px)');
+    const closeBtn = document.getElementById('menu-close');
+
+    document.querySelectorAll('#menu .menu_links').forEach((link) => {
+        link.addEventListener('click', () => {
+            // Mobile uniquement : on simule un clic sur "Fermer"
+            if (mobileQuery.matches && closeBtn) closeBtn.click();
+        });
+    });
+})();

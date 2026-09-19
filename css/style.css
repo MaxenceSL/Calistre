@@ -504,7 +504,7 @@ nav {
 }
 
 .portfolio_filters button {
-    border-radius: 2rem;
+    /* border-radius: 2rem; */
     border: none;
     padding: 0.5rem 1rem;
     font-family: "Play", sans-serif;
@@ -772,8 +772,8 @@ nav {
 }
 
 .servicesCartes_article {
-    border-radius: 2rem;
-    background-color: #cba58890;
+    /* border-radius: 2rem; */
+    background-color: #EEE4DB;
     color: #26483B;
     font-family: "Play", sans-serif;
     padding: 2rem;
@@ -836,15 +836,19 @@ nav {
 }
 
 .servicesCartes_button {
+    display: inline-block; 
+    text-decoration: none; 
+    box-sizing: border-box;
+    text-align: center;
     color: #315E59;
-    background-color: #EEE4DB;
+    background-color: #CAC9C1;
     font-weight: bold;
     text-transform: uppercase;
     font-family: "Play", sans-serif;
     font-size: 1.25rem;
     border: none;
     padding: 1rem 2rem;
-    border-radius: 2rem;
+    /* border-radius: 2rem; */
     width: 22rem;
     box-shadow: 4px 5px 0px #26483B;
     cursor: pointer;
@@ -866,7 +870,7 @@ nav {
     padding: 1.5rem 2rem;
     border-radius: 2rem;
     transform: rotate(-25deg);
-    color: #DA5F71;
+    color: #EEE4DB;
     display: inline-block;
     /* important pour que la transformation fonctionne bien */
 }
@@ -979,7 +983,7 @@ nav {
     background-color: #DA5F71;
     color: #EEE4DB;
     border: 1px solid #315E59;
-    border-radius: 1rem;
+    /* border-radius: 1rem; */
     padding: 0.5rem 1.5rem;
     text-transform: uppercase;
     font-weight: bold;
@@ -1310,7 +1314,7 @@ nav {
     .contactSection_form {
         padding: 0;
         padding: 1rem;
-        background-color: #CBA588;
+        background-color: #EEE4DB;
     }
 
     .contactSection_H1 {
