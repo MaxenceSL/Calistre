@@ -169,7 +169,7 @@ nav {
     display: flex;
     justify-content: space-between;
     padding: 10rem 0 15rem 10rem;
-    background-color: #f4efeb;
+    background-color: #FFFFFF;
     z-index: 100;
 }
 
@@ -413,7 +413,7 @@ nav {
 .knowledgeSection {
     position: relative;
     z-index: 10;
-    background-color: #f4efeb;
+    background-color: #FFFFFF;
     display: flex;
     /* justify-content: center; */
     padding: 15rem 5rem;
@@ -674,7 +674,7 @@ nav {
 
 /************ SOUS SECTION PORTFOLIO ********/
 .sousSection_MesServices {
-    background-color: #CAC9C1;
+    background-color: #FFFFFF;
     padding: 0 10rem 5rem;
 }
 
@@ -783,7 +783,7 @@ nav {
 }
 
 .servicesCartes_h3 {
-    color: #26483B;
+    color: #EEE4DB;
     font-size: 2rem;
     text-transform: uppercase;
     font-weight: bold;
@@ -840,8 +840,8 @@ nav {
     text-decoration: none; 
     box-sizing: border-box;
     text-align: center;
-    color: #315E59;
-    background-color: #CAC9C1;
+    color: #EEE4DB;
+    background-color: #26483B;
     font-weight: bold;
     text-transform: uppercase;
     font-family: "Play", sans-serif;
@@ -850,8 +850,9 @@ nav {
     padding: 1rem 2rem;
     /* border-radius: 2rem; */
     width: 22rem;
-    box-shadow: 4px 5px 0px #26483B;
+    box-shadow: 4px 5px 0px #CAC9C1;
     cursor: pointer;
+    border: 0.5px solid #CAC9C1;
 }
 
 .servicesCartes_button:hover {
@@ -866,6 +867,7 @@ nav {
     right: 0.5rem;
     top: 4rem;
     font-size: 1.25rem;
+    border: 0.5px solid #EEE4DB;
     background-color: #26483B;
     padding: 1.5rem 2rem;
     border-radius: 2rem;
@@ -908,7 +910,7 @@ nav {
 
 /************* CONTACT **********************/
 .contactSection {
-    background-color: #CAC9C1;
+    background-color: #FFFFFF;
     position: relative;
     z-index: 10;
     display: flex;
@@ -944,7 +946,7 @@ nav {
 
 .contactSection_form {
     font-family: "Play", sans-serif;
-    background-color: #EEE4DB;
+    background-color: #CAC9C1;
     border-radius: 1rem;
     padding: 3rem;
     box-shadow: 5px 5px 0px #315E59;
@@ -960,7 +962,7 @@ nav {
     display: flex;
     flex-direction: column;
     font-size: 2rem;
-    color: #315E59;
+    color: #EEE4DB;
     font-weight: bold;
     padding-bottom: 3rem;
 }
@@ -971,7 +973,7 @@ nav {
     font-size: 2rem;
     background-color: transparent;
     border: none;
-    border-bottom: 1px solid #323232;
+    border-bottom: 1px solid #EEE4DB;
 }
 
 .contactSection_button {
@@ -988,7 +990,7 @@ nav {
     text-transform: uppercase;
     font-weight: bold;
     font-family: "Play", sans-serif;
-    box-shadow: 4px 4px 0px #315E59;
+    box-shadow: 4px 4px 0px #EEE4DB;
 }
 
 .contactSection_buttonDeco:hover {
@@ -1068,6 +1070,14 @@ nav {
 
 .footer_ContactH2_padding {
     padding-left: 3rem;
+}
+
+.finalFooter{
+    background-color: #315E59;
+    color: #EEE4DB;
+    font-family: "Play", sans-serif;
+    font-size: 0.7rem;
+    padding: 0 2rem;
 }
 
 /***********SMARTPHONE***********************/
@@ -1314,7 +1324,7 @@ nav {
     .contactSection_form {
         padding: 0;
         padding: 1rem;
-        background-color: #EEE4DB;
+        background-color: #315E59;
     }
 
     .contactSection_H1 {
