@@ -1,5 +1,5 @@
 header {
-    background-color: #315e5977;
+    background-color: #315E59;
     display: flex;
     justify-content: center;
     padding-bottom: 5rem;
@@ -111,7 +111,7 @@ nav {
 /******MAIN*****/
 /*Titre ACcueil*/
 .titlesAccueil {
-    background-color: #315e5977;
+    background-color: #315E59;
     /* width: 100vw; */
     display: flex;
     align-items: center;
@@ -184,7 +184,7 @@ nav {
     height: 31rem;
     border: 3px solid #EEE4DB;
     margin-right: 0.5rem;
-    transition: transform 0.5s ease, opacity 0.5s ease;
+    /* transition: transform 0.5s ease, opacity 0.5s ease; */
 }
 
 .cadre-knowledge-img-container {
@@ -217,91 +217,6 @@ nav {
 
 .cadre {
     position: relative;
-}
-
-.sousCartePlacement {
-    position: relative;
-}
-
-.sous-carte_atelier {
-    position: absolute;
-    top: -2rem;
-    left: -2.3rem;
-    width: 24rem;
-    height: 31rem;
-    border: 50px solid transparent;
-    border-image: url('../ressources/textile-texture.jpg') 110 stretch;
-    transition: transform 0.2s ease-out;
-}
-
-.sous-carte_atelier::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 20px;
-    /* épaisseur supplémentaire */
-    background: url('../ressources/textile-texture.jpg') center / cover no-repeat;
-}
-
-.cadreH_atelier {
-    position: absolute;
-    top: -4.3rem;
-    left: -4.8rem;
-    transform: rotate(10deg) translateY(-60px) translateX(-45px);
-    transition: transform 0.1s linear, opacity 0.1s linear;
-    z-index: 11;
-}
-
-.cadreB_atelier {
-    position: absolute;
-    top: 35rem;
-    left: -4.8rem;
-    transform: rotate(15deg) translateY(20px) translateX(-45px);
-    transition: transform 0.1s linear, opacity 0.1s linear;
-}
-
-.cadreG_atelier {
-    position: absolute;
-    top: -4.55rem;
-    left: -4.55rem;
-    transform: rotate(-15deg) translateY(-60px) translateX(-100px);
-    transition: transform 0.1s linear, opacity 0.1s linear;
-    z-index: 11;
-}
-
-.cadreD_atelier {
-    position: absolute;
-    top: -4.5rem;
-    right: -13.2rem;
-}
-
-.cadreCrochet_atelier {
-    position: absolute;
-    top: -7rem;
-    left: 11rem;
-}
-
-.atelierPictures .cadre-atelier-img-container:nth-child(1) {
-    transform: translateX(0) scale(1);
-    z-index: 3;
-}
-
-/* Position des cartes empilées */
-.atelierPictures .cadre-atelier-img-container:nth-child(2) {
-    z-index: 2;
-    opacity: 0;
-}
-
-.atelierPictures .cadre-atelier-img-container:nth-child(3) {
-    z-index: 1;
-    opacity: 0;
-}
-
-.atelierPictures .cadre-atelier-img-container:nth-child(4) {
-    z-index: 0;
-    opacity: 0;
 }
 
 /* Boutons */
@@ -537,23 +452,8 @@ nav {
     position: absolute;
     top: -4rem;
     left: 2.5rem;
-}
-
-.knowledgePictures .cadre-knowledge-img-container:nth-child(1) {
     z-index: 3;
-}
-
-/* Position des cartes empilées */
-.knowledgePictures .cadre-knowledge-img-container:nth-child(2) {
-    z-index: 2;
-}
-
-.knowledgePictures .cadre-knowledge-img-container:nth-child(3) {
-    z-index: 1;
-}
-
-.knowledgePictures .cadre-knowledge-img-container:nth-child(4) {
-    z-index: 0;
+    pointer-events: none;
 }
 
 /*********PORTFOLIO*******/
@@ -646,14 +546,14 @@ nav {
 .portfolioArticle_img-container {
     position: relative;
     overflow: hidden;
-    width: 23rem;
+    width: 21.75rem;
     height: 20rem;
     margin-right: 0.5rem;
-    border-top-left-radius: 1rem;
-    border-top-right-radius: 1rem;
-    box-shadow: 0 0 10px #323232;
-    /* border: 4px solid #EDE6D6;
-    border-bottom: none; */
+    /* border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem; */
+
+    border: 10px solid #CBA588;
+    border-bottom: none;
     transition: transform 0.3s ease;
     display: flex;
     justify-content: center;
@@ -662,7 +562,7 @@ nav {
 .portfolioArticle_img-container:hover {
     cursor: pointer;
 
-    .hoverPortfolio{
+    .hoverPortfolio {
         display: flex;
         transition: transform 1s ease;
         align-items: center;
@@ -678,7 +578,7 @@ nav {
     transition: transform 0.6s ease, filter 0.6s ease, opacity 0.6s ease;
 }
 
-.hoverPortfolio{
+.hoverPortfolio {
     display: none;
     position: absolute;
     bottom: 0;
@@ -687,7 +587,7 @@ nav {
     color: #FFFFFF;
 }
 
-.hoverPortfolio_img{
+.hoverPortfolio_img {
     width: 1rem;
     height: 1rem;
 }
@@ -702,9 +602,12 @@ nav {
     font-family: "Play", sans-serif;
     color: #323232;
     padding: 1.5rem 2rem 2.5rem;
-    border-bottom-left-radius: 1rem;
-    border-bottom-right-radius: 1rem;
-    box-shadow: 0 0 10px #323232;
+    /* border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem; */
+    /* box-shadow: 0 0 10px #323232; */
+    border: 10px solid #CBA588;
+    border-top: none;
+    box-shadow: 3px 4px 10px #32323287;
 }
 
 /* Overlay noir */
@@ -933,8 +836,8 @@ nav {
 }
 
 .servicesCartes_button {
-    color: #CAC9C1;
-    background-color: #DA5F71;
+    color: #315E59;
+    background-color: #EEE4DB;
     font-weight: bold;
     text-transform: uppercase;
     font-family: "Play", sans-serif;
@@ -1239,46 +1142,17 @@ nav {
 
     .cadre-atelier-img-container,
     .cadre-knowledge-img-container {
+        /* margin-left: 3rem; */
         width: 15rem;
         height: 18rem;
     }
 
-    .sous-carte_atelier,
-    .cadreH_atelier,
-    .cadreB_atelier,
-    .cadreG_atelier,
-    .cadreD_atelier,
-    .cadreCrochet_atelie,
-    .img_CadreKnowledge {
+    .carrouselButtonAtelier,
+    .carrouselButtonKnowledge {
         display: none;
     }
 
-    .carrouselButtonAtelier,
-    .carrouselButtonKnowledge {
-        margin: 0;
-    }
-
-    .carrouselButtonKnowledge {
-        padding-bottom: 25rem;
-    }
-
-    /* Position des cartes empilées */
-    /* .atelierPictures .cadre-atelier-img-container:nth-child(2) {
-        transform: translateX(20px) scale(0.95) rotate(3deg);
-    }
-
-    .atelierPictures .cadre-atelier-img-container:nth-child(3) {
-        transform: translateX(40px) scale(0.9) rotate(7deg);
-        z-index: 1;
-    }
-
-    .atelierPictures .cadre-atelier-img-container:nth-child(4) {
-        transform: translateX(50px) scale(0.85) rotate(9deg);
-        z-index: 0;
-    } */
-
     .articleAbout {
-        padding-top: 18rem;
         width: 100%;
     }
 
@@ -1320,9 +1194,9 @@ nav {
 
     .atelierKnowledgeDeco {
         z-index: 1000;
-        top: 2rem;
+        /* top: 2rem;
         left: -5rem;
-        height: 15%;
+        height: 15%; */
         transform: rotate(15deg);
     }
 
@@ -1355,28 +1229,6 @@ nav {
         padding: 4rem 1rem;
     }
 
-    .knowledgePictures .cadre-knowledge-img-container:nth-child(1) {
-        transform: translateX(0px) scale(1);
-        z-index: 3;
-    }
-
-    /* Position des cartes empilées */
-    .knowledgePictures .cadre-knowledge-img-container:nth-child(2) {
-        transform: translateX(20px) scale(0.95) rotate(3deg);
-        z-index: 2;
-    }
-
-    .knowledgePictures .cadre-knowledge-img-container:nth-child(3) {
-        transform: translateX(40px) scale(0.9) rotate(7deg);
-        z-index: 1;
-    }
-
-    .knowledgePictures .cadre-knowledge-img-container:nth-child(4) {
-        /* opacity: 1; */
-        transform: translateX(50px) scale(0.85) rotate(9deg);
-        z-index: 0;
-    }
-
     .portfolioArticle_h2,
     .servicessection_h2,
     .servicesCartes_h3,
@@ -1398,9 +1250,13 @@ nav {
         margin-bottom: 1rem;
     }
 
-    .portfolioArticle_img-container,
     .portfolioArticle_card {
         width: 20rem;
+    }
+
+    .portfolioArticle_img-container {
+        width: auto;
+        margin-right: 0;
     }
 
     .servicesCartes_liste_h4,
@@ -1486,4 +1342,21 @@ nav {
     .footer {
         flex-direction: column;
     }
+
+    .knowledgePictures {
+        padding: 0;
+    }
+
+    .cadreKnowledge {
+        display: none;
+    }
+
+    .atelierPictures,
+    .knowledgePictures {
+        display: flex;
+        justify-content: center;
+        padding-bottom: 25rem;
+    }
+
+    ;
 }
