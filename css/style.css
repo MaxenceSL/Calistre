@@ -1,11 +1,12 @@
 /* Effet "sections empilées" */
-main > section {
+main>section {
     position: sticky;
     top: 0;
 }
 
-main > section:not(:first-child) {
-    box-shadow: 0 -12px 30px rgba(0, 0, 0, 0.25); /* optionnel : fait ressortir la section qui recouvre */
+main>section:not(:first-child) {
+    box-shadow: 0 -12px 30px rgba(0, 0, 0, 0.25);
+    /* optionnel : fait ressortir la section qui recouvre */
 }
 
 header {
@@ -243,9 +244,12 @@ nav {
     margin-left: 0.5rem;
 }
 
-.carrouselButtonAtelier,
 .carrouselButtonKnowledge {
     margin: 38rem 0 0 10rem;
+}
+
+.carrouselButtonAtelier {
+    margin: 32rem 0 0 10rem;
 }
 
 .navig:hover,
@@ -481,6 +485,7 @@ nav {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-bottom: 0;
 }
 
 .portfolioArticle_h2 {
@@ -506,8 +511,10 @@ nav {
 }
 
 .portfolio_filters {
-    padding: 1rem;
     margin-top: 2rem;
+    display: flex;
+    justify-content: flex-start;
+    padding-left: 2.5rem;
 }
 
 .portfolio_filters button {
@@ -517,26 +524,17 @@ nav {
     font-family: "Play", sans-serif;
     color: #26483B;
     cursor: pointer;
-    margin-right: 1rem;
     background-color: #EEE4DB;
-    box-shadow: 3px 4px 0px #26483B;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
 }
 
 .portfolio_filters button.active {
     background-color: #26483B;
     color: #EEE4DB;
-    box-shadow: none;
+    font-size: large;
     position: relative;
-    left: 3px;
-    top: 4px;
-}
-
-.portfolio_filters button:hover {
-    box-shadow: none;
-    position: relative;
-    left: 3px;
-    top: 4px;
-    /* background-color: #EEE4DB; */
+    top: 5px;
 }
 
 .portfolioArticle_allCards {
@@ -693,6 +691,7 @@ nav {
     display: flex;
     justify-content: space-evenly;
     background-color: #CAC9C1;
+    margin-top: 10rem;
 }
 
 .sousSection_avantage {
@@ -843,12 +842,12 @@ nav {
 }
 
 .servicesCartes_button {
-    display: inline-block; 
-    text-decoration: none; 
+    display: inline-block;
+    text-decoration: none;
     box-sizing: border-box;
     text-align: center;
-    color: #EEE4DB;
-    background-color: #26483B;
+    color: #26483B;
+    background-color: #EEE4DB;
     font-weight: bold;
     text-transform: uppercase;
     font-family: "Play", sans-serif;
@@ -967,7 +966,7 @@ nav {
     display: flex;
     flex-direction: column;
     font-size: 2rem;
-    color: #EEE4DB;
+    color: #315E59;
     font-weight: bold;
     padding-bottom: 3rem;
 }
@@ -978,7 +977,7 @@ nav {
     font-size: 2rem;
     background-color: transparent;
     border: none;
-    border-bottom: 1px solid #EEE4DB;
+    border-bottom: 1px solid #315E59;
 }
 
 .contactSection_button {
@@ -1077,7 +1076,7 @@ nav {
     padding-left: 3rem;
 }
 
-.finalFooter{
+.finalFooter {
     background-color: #315E59;
     color: #EEE4DB;
     font-family: "Play", sans-serif;
@@ -1258,15 +1257,8 @@ nav {
     .portfolioArticle_p,
     .servicessection_p {
         width: auto;
-    }
-
-    .portfolio_filters {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .portfolio_filters button {
-        margin-bottom: 1rem;
+        padding-right: 1rem;
+        padding-bottom: 2rem;
     }
 
     .portfolioArticle_card {
@@ -1329,7 +1321,7 @@ nav {
     .contactSection_form {
         padding: 0;
         padding: 1rem;
-        background-color: #315E59;
+        background-color: #CAC9C1;
     }
 
     .contactSection_H1 {
@@ -1375,6 +1367,14 @@ nav {
         display: flex;
         justify-content: center;
         padding-bottom: 25rem;
+    }
+
+    .portfolioSection {
+        padding-right: 0;
+    }
+
+    .portfolio_filters {
+        display: none
     }
 
     ;

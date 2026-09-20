@@ -25,13 +25,16 @@
     gap: var(--card-gap);
     align-items: flex-start;
     min-height: 0;
-    margin-top: 2rem;
-    padding: 0.5rem var(--edge) 1.5rem;
+    margin-left: 1rem;
+    padding: 1rem var(--edge) 1rem;
     overflow-x: auto;
     overflow-y: hidden;
     overscroll-behavior-x: contain;
     scrollbar-width: none;
     cursor: grab;
+    background-color: #EEE4DB;
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
 }
 
 .portfolioArticle_allCards::-webkit-scrollbar {
@@ -73,15 +76,17 @@
     max-width: min(42rem, 85vw);   /* plafond pour les photos très larges */
     object-fit: cover;
     transform: none;
+    filter: none;
     transition: filter 0.4s ease;
     user-select: none;
     -webkit-user-drag: none;
 }
 
-/* Au survol : la photo s'assombrit un peu */
-.portfolioArticle_allCards .portfolioArticle_card:hover .portfolioArticle_img {
+/* Annule l'ancien effet :hover de style.css (zoom + assombrissement) :
+   sur mobile, le :hover "colle" après un toucher. */
+.portfolioArticle_allCards .portfolioArticle_img:hover {
     transform: none;
-    filter: brightness(0.6);
+    filter: none;
 }
 
 /* --- Infos affichées au survol ------------------------------------ */
@@ -127,20 +132,15 @@
     line-height: 1.4;
 }
 
-.portfolioArticle_allCards .portfolioArticle_card:hover .hoverPortfolio,
-.portfolioArticle_allCards .portfolioArticle_card:hover .portfolioArticle_descr {
-    opacity: 1;
-    transform: none;
-}
-
-/* Écrans tactiles : pas de survol, les infos restent affichées */
-@media (hover: none) {
-    .portfolioArticle_allCards .portfolioArticle_img {
-        filter: brightness(0.8);
+/* Survol : uniquement sur les appareils qui ont vraiment une souris.
+   Sur écran tactile, la photo reste en clair (un toucher ouvre le plein écran). */
+@media (hover: hover) {
+    .portfolioArticle_allCards .portfolioArticle_card:hover .portfolioArticle_img {
+        filter: brightness(0.6);   /* la photo s'assombrit un peu */
     }
 
-    .portfolioArticle_allCards .portfolioArticle_descr,
-    .portfolioArticle_allCards .portfolioArticle_card .hoverPortfolio {
+    .portfolioArticle_allCards .portfolioArticle_card:hover .hoverPortfolio,
+    .portfolioArticle_allCards .portfolioArticle_card:hover .portfolioArticle_descr {
         opacity: 1;
         transform: none;
     }
@@ -177,6 +177,33 @@
     box-shadow: 3px 1.8px 0px #26483B;
 }
 
+/* --- Photo en plein écran : zoom -------------------------------------- */
+#imageOverlay {
+    overflow: hidden;              /* la photo zoomée ne déborde pas de l'écran */
+}
+
+#imageOverlay #overlayImg {
+    touch-action: none;            /* pincer / glisser gérés par le JS */
+    cursor: zoom-in;
+    user-select: none;
+    -webkit-user-drag: none;
+    transform-origin: center center;
+    will-change: transform;
+}
+
+#imageOverlay #overlayImg.is-zoomed {
+    cursor: grab;
+}
+
+#imageOverlay #overlayImg.is-dragging {
+    cursor: grabbing;
+}
+
+/* La croix et les flèches restent cliquables quand la photo est zoomée */
+#imageOverlay .closeOverlay {
+    z-index: 3;
+}
+
 /* --- Flèches de la photo en plein écran (ajoutées par le JS) ------- */
 #imageOverlay .overlayArrow {
     position: absolute;
@@ -192,6 +219,7 @@
     background-color: rgba(0, 0, 0, 0.35);
     color: #FFFFFF;
     cursor: pointer;
+    z-index: 3;
     transition: background-color 0.2s ease, border-color 0.2s ease;
 }
 
