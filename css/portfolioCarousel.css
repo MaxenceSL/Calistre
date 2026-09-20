@@ -1,0 +1,239 @@
+/* ================================================================
+   PORTFOLIO : carrousel horizontal de cartes
+   À ajouter APRÈS style.css :
+   <link rel="stylesheet" href="./css/portfolioCarousel.css">
+   (toutes les règles sont préfixées par .portfolioArticle_allCards :
+   elles passent devant les anciennes règles de la grille dans style.css)
+   ================================================================ */
+
+/* L'article doit pouvoir se réduire à la largeur de l'écran, sinon le carrousel
+   élargit la page au lieu de défiler dans son cadre. */
+.portfolioArticle {
+    width: 100%;
+    min-width: 0;
+}
+
+/* --- Piste du carrousel ------------------------------------------ */
+.portfolioArticle_allCards {
+    --card-h: 34rem;               /* hauteur des cartes */
+    --card-gap: 1.75rem;           /* espace entre les cartes */
+    --card-radius: 0.75rem;        /* arrondi des coins */
+    --edge: max(1.5rem, 5vw);      /* marge gauche/droite de la piste */
+
+    display: flex;
+    grid-template-columns: none;   /* annule l'ancienne grille */
+    gap: var(--card-gap);
+    align-items: flex-start;
+    min-height: 0;
+    margin-top: 2rem;
+    padding: 0.5rem var(--edge) 1.5rem;
+    overflow-x: auto;
+    overflow-y: hidden;
+    overscroll-behavior-x: contain;
+    scrollbar-width: none;
+    cursor: grab;
+}
+
+.portfolioArticle_allCards::-webkit-scrollbar {
+    display: none;
+}
+
+.portfolioArticle_allCards.is-dragging,
+.portfolioArticle_allCards.is-dragging * {
+    cursor: grabbing;
+}
+
+/* --- Carte : la photo remplit toute la carte ---------------------- */
+.portfolioArticle_allCards .portfolioArticle_card {
+    position: relative;
+    flex: 0 0 auto;
+    width: auto;
+    height: var(--card-h);
+    border-radius: var(--card-radius);
+    overflow: hidden;
+    background-color: #B9B8B0;     /* visible le temps du chargement de la photo */
+}
+
+.portfolioArticle_allCards .portfolioArticle_img-container {
+    position: relative;
+    display: block;
+    width: auto;
+    height: 100%;
+    margin: 0;
+    border: none;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+/* La largeur de la carte suit le format de la photo (comme sur la maquette) */
+.portfolioArticle_allCards .portfolioArticle_img {
+    display: block;
+    width: auto;
+    height: var(--card-h);
+    max-width: min(42rem, 85vw);   /* plafond pour les photos très larges */
+    object-fit: cover;
+    transform: none;
+    transition: filter 0.4s ease;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+/* Au survol : la photo s'assombrit un peu */
+.portfolioArticle_allCards .portfolioArticle_card:hover .portfolioArticle_img {
+    transform: none;
+    filter: brightness(0.6);
+}
+
+/* --- Infos affichées au survol ------------------------------------ */
+/* Délai de fabrication (icône + date) : en haut à gauche */
+.portfolioArticle_allCards .portfolioArticle_card .hoverPortfolio {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    bottom: auto;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.4rem 0.9rem;
+    border-radius: 2rem;
+    background-color: rgba(0, 0, 0, 0.35);
+    color: #FFFFFF;
+    font-size: 0.85rem;
+    opacity: 0;
+    transition: opacity 0.35s ease;
+    pointer-events: none;          /* laisse passer le clic vers la photo */
+}
+
+/* Titre + texte : en bas de la photo, sur un dégradé sombre */
+.portfolioArticle_allCards .portfolioArticle_descr {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 4rem 1.5rem 1.5rem;
+    border: none;
+    box-shadow: none;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));
+    color: #FFFFFF;
+    opacity: 0;
+    transform: translateY(0.75rem);
+    transition: opacity 0.35s ease, transform 0.35s ease;
+    pointer-events: none;          /* laisse passer le clic vers la photo */
+}
+
+.portfolioArticle_allCards .portfolioArticle_descr p {
+    padding-top: 0.5rem;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+.portfolioArticle_allCards .portfolioArticle_card:hover .hoverPortfolio,
+.portfolioArticle_allCards .portfolioArticle_card:hover .portfolioArticle_descr {
+    opacity: 1;
+    transform: none;
+}
+
+/* Écrans tactiles : pas de survol, les infos restent affichées */
+@media (hover: none) {
+    .portfolioArticle_allCards .portfolioArticle_img {
+        filter: brightness(0.8);
+    }
+
+    .portfolioArticle_allCards .portfolioArticle_descr,
+    .portfolioArticle_allCards .portfolioArticle_card .hoverPortfolio {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+/* --- Flèches sous le carrousel (ajoutées par le JS) ---------------- */
+.portfolioCarouselNav {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    padding-top: 0.5rem;
+}
+
+.portfolioCarouselNav .navig {
+    margin: 0;
+    color: #26483B;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.portfolioCarouselNav .portfolioNavPrev svg {
+    transform: rotate(180deg);
+}
+
+.portfolioCarouselNav .navig:disabled {
+    opacity: 0.35;
+    cursor: default;
+}
+
+.portfolioCarouselNav .navig:disabled:hover {
+    left: 0;
+    top: 0;
+    box-shadow: 3px 1.8px 0px #26483B;
+}
+
+/* --- Flèches de la photo en plein écran (ajoutées par le JS) ------- */
+#imageOverlay .overlayArrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3.5rem;
+    height: 3.5rem;
+    border: 2px solid rgba(255, 255, 255, 0.7);
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.35);
+    color: #FFFFFF;
+    cursor: pointer;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+#imageOverlay .overlayArrow:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-color: #FFFFFF;
+}
+
+#imageOverlay .overlayPrev {
+    left: 1.5rem;
+}
+
+#imageOverlay .overlayNext {
+    right: 1.5rem;
+}
+
+#imageOverlay .overlayPrev svg {
+    transform: rotate(180deg);
+}
+
+/* --- Smartphone --------------------------------------------------- */
+@media screen and (max-width: 800px) {
+    .portfolioArticle_allCards {
+        --card-h: 26rem;
+        --card-gap: 1rem;
+        --edge: 1rem;
+    }
+
+    .portfolioArticle_allCards .portfolioArticle_img {
+        max-width: 80vw;
+    }
+
+    #imageOverlay .overlayArrow {
+        width: 2.75rem;
+        height: 2.75rem;
+    }
+
+    #imageOverlay .overlayPrev {
+        left: 0.5rem;
+    }
+
+    #imageOverlay .overlayNext {
+        right: 0.5rem;
+    }
+}
