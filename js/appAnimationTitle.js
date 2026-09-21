@@ -75,3 +75,4 @@ const observerContact = new IntersectionObserver(entries => {
 
 observerContact.observe(targetContact);
 
+
