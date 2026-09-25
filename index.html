@@ -78,7 +78,14 @@
 
         <section id="APropos" class="atelierSection">
             <div class="atelierPictures sousCartePlacement">
-
+                <div class="cadre-atelier-img-container">
+                    <img class="cadre-atelier-img" src="./ressources/atelierApropos.png"
+                        alt="illustration encadrement n°4">
+                </div>
+                <div class="cadre-atelier-img-container">
+                    <img class="cadre-atelier-img" src="./ressources/8c28b203496b91ea0376fbae7465e646.jpg"
+                        alt="illustration encadrement n°4">
+                </div>
                 <div class="cadre-atelier-img-container">
                     <img class="cadre-atelier-img" src="./ressources/illuAtelier1.jpg"
                         alt="illustration encadrement n°1">
@@ -614,7 +621,8 @@
             <h1 class="contactSection_H1">Me contacter</h1>
             <p class="contactSection_p">Rencontrons-nous et imaginons ensemble un encadrement qui donnera envie de
                 revenir admirer vos murs</p>
-            <form class="contactSection_form" action="">
+            <form class="contactSection_form" action="https://formspree.io/f/mqpaddge" method="POST">
+                <input type="hidden" name="_subject" value="Nouveau message depuis Calistre" />
                 <ul>
                     <div class="contactSection_formName">
                         <li>
@@ -744,6 +752,7 @@
     <script src="./js/appSectionsEmpilees.js"></script>
     <script src="./js/appPortfolioCarousel.js"></script>
     <script src="./js/appAnimationScrollHeader.js"></script>
+    <script src="./js/appContactForm.js"></script>
 </body>
 
 </html>

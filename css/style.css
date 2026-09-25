@@ -1261,6 +1261,26 @@ nav {
     padding: 0 2rem;
 }
 
+/* ================================================================
+   Message de confirmation / erreur du formulaire de contact
+   ================================================================ */
+.contactSection_feedback {
+    margin-top: 1rem;
+    text-align: right;
+    font-weight: bold;
+    color: #315E59;      /* succès : vert du site */
+}
+
+.contactSection_feedback.is-error {
+    color: #DA5F71;      /* erreur : rose du site */
+}
+
+@media screen and (max-width: 800px) {
+    .contactSection_feedback {
+        text-align: center;
+    }
+}
+
 /***********SMARTPHONE***********************/
 
 @media screen and (max-width: 1300px) {
@@ -1577,7 +1597,7 @@ nav {
     .knowledgePictures {
         display: flex;
         justify-content: center;
-        padding-bottom: 25rem;
+        padding-bottom: 22rem;
     }
 
     .portfolioSection {
